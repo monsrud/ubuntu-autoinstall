@@ -1,0 +1,5 @@
+[ubuntu_server]
+127.0.0.1
+[ubuntu_server:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+

@@ -1,0 +1,29 @@
+#cloud-config
+autoinstall:
+  version: 1
+  update: yes
+  locale: en_US.UTF-8
+  keyboard:
+    layout: us    
+  identity:
+    hostname: ubuntu 
+    password: "$6$BazAt8cH8lLBWbzF$FNlpK3i.D5MUC10JUBoLpCWLUOcPZzNGTRpmARrhgEJbbKc4Srn8kInFe7uWytojNoAxJ2o.F/facNMgHxLTA."
+    username: testuser 
+  ssh:
+    allow-pw: true
+    install-server: true
+    authorized-keys:
+      - "yoursshkey"
+  storage:
+    layout:
+      name: direct
+  package_update: true
+  package_upgrade: true
+  packages:
+    - ansible
+    - git
+  user-data:
+    timezone: Etc/UTC
+    runcmd:
+      - wget https://raw.githubusercontent.com/monsrud/ubuntu-autoinstall/main/src/first_boot.sh 
+      - bash first_boot.sh

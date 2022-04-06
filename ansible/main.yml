@@ -1,0 +1,22 @@
+---
+#
+# Common settings 
+#
+- hosts: '*'
+  remote_user: root
+  become: true
+  become_user: root
+
+  tasks:
+
+  - name: Update and Upgrade
+    apt:
+        update_cache: yes
+        upgrade: dist
+
+  - name: Install Common Ubuntu/Debian Packages
+    apt:
+      pkg:
+        - curl
+        - wget 
+
