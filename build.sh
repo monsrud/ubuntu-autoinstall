@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [ ! -f iso-source/cloud-init ]
+then
     mkdir iso-source 
 fi
 
@@ -15,6 +16,7 @@ cp src/grub.cfg iso-source/boot/grub/
 cp src/txt.cfg iso-source/isolinux/
 
 if [ ! -f iso-source/cloud-init ]
+then
     mkdir iso-source/cloud-init
 fi
 
