@@ -15,6 +15,8 @@ Generate an ubuntu auto install iso that is configured/customized via cloud-init
 
 - Boot the iso on the system you are installing
 
+- Burn the ISO, boot from the ISO, or image a USB stick using the ISO
+
 
 Requirements:
 
