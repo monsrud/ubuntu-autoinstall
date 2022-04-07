@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f iso-source/cloud-init ]
+if [ ! -d iso-source ]
 then
     mkdir iso-source 
 fi
@@ -15,16 +15,16 @@ fi
 cp src/grub.cfg iso-source/boot/grub/
 cp src/txt.cfg iso-source/isolinux/
 
-if [ ! -f iso-source/cloud-init ]
+if [ ! -d iso-source/cloud-init ]
 then
     mkdir iso-source/cloud-init
 fi
 
-cp -f cloud-init/meta-data iso-source/cloud-init/
-cp -f cloud-init/user-data iso-source/cloud-init/
-cp -f cloud-init/vendor-data iso-source/cloud-init/
+cp -rf cloud-init iso-source/
+cp -rf ansible iso-source/
+cp -rf  src/first_boot.sh iso-source/
 
-rm -Rf rm iso-source/\[BOOT\]/
+rm -rf rm iso-source/\[BOOT\]/
 
 cd iso-source
 

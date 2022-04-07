@@ -21,9 +21,10 @@ autoinstall:
   package_upgrade: true
   packages:
     - ansible
-    - git
+  late-commands:
+    - cp -r /cdrom/ansible /target/root/ansible
+    - cp  /cdrom/first_boot.sh /target/first_boot.sh
   user-data:
     timezone: Etc/UTC
     runcmd:
-      - wget https://raw.githubusercontent.com/monsrud/ubuntu-autoinstall/main/src/first_boot.sh 
-      - bash first_boot.sh
+      - bash /first_boot.sh
