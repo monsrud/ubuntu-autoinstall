@@ -5,7 +5,7 @@ Generate an ubuntu auto install iso that is configured/customized via cloud-init
 
 **Basic Steps**
 
-- Edit cloud-init/user-data and specify a username and password for the default user.
+- Edit cloud-init/user-data and specify a username and password for the default user
 
 - Add an ssh key for the user in cloud-init/user-data
 
@@ -15,6 +15,10 @@ Generate an ubuntu auto install iso that is configured/customized via cloud-init
 
 - Boot the iso on the system you are installing
 
+
+Requirements:
+
+- genisoimage must be installed and is used to creates ISO-9660 CD-ROM images
 
 **Generate a password for a user:**
 
