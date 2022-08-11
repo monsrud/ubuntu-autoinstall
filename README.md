@@ -20,7 +20,7 @@ Generate an ubuntu auto install iso that is configured/customized via cloud-init
 
 Requirements:
 
-- genisoimage must be installed and is used to creates ISO-9660 CD-ROM images
+- genisoimage must be installed and is used to create ISO-9660 CD-ROM images
 
 **Generate a password for a user:**
 
